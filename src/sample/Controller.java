@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-
+//This is a class
 public class Controller implements Initializable {
 
     //Unable to run the program without this code, I acknowledge it is a bug
@@ -32,6 +32,7 @@ public class Controller implements Initializable {
     final String PASS = "";
 
     @Override
+    //This is a method
     // creating the array with numbers 1-10 to allow the user to select the quantity
     public void initialize(URL location, ResourceBundle resources) {
         ObservableList<String> options =
@@ -43,42 +44,55 @@ public class Controller implements Initializable {
     }
     //I'm aware that the @FMLX is a warning for each of these however, I'm unable to get rid of them
     @FXML
+    //This is a data type
     private Tab tabProductLine;
 
     @FXML
+    //This is a data type
     private Label labelProductName;
 
     @FXML
+    //This is a data type
     private Label labelManufacturer;
 
     @FXML
+    //This is a data type
     private Label labelItemType;
 
     @FXML
+    //This is a data type
     private TextField textfieldProductName;
 
     @FXML
+    //This is a data type
     private TextField textfieldManufacturer;
 
     @FXML
+    //This is a data type
     private ChoiceBox choiceviewItemType;
 
     @FXML
+    //This is a data type
     private Label labelExistingProducts;
 
     @FXML
+    //This is a data type
     private Button buttonAddProduct;
 
     @FXML
+    //This is a data type
     private ComboBox comboboxChooseQuantity;
 
     @FXML
+    //This is a data type
     private Tab tabProduce;
 
     @FXML
+    //This is a data type
     private Tab tabProducitonLog;
 
     @FXML
+    //This is a data type
     void AddProduct(MouseEvent event) {
 
         Connection conn = null;
@@ -101,6 +115,7 @@ public class Controller implements Initializable {
             conn = DriverManager.getConnection(DB_URL);
 
             //STEP 3: Execute a query
+            //This is a method
             stmt = conn.createStatement();
             // allows for what is entered in the text fields to be added to the database
             String sql = "INSERT INTO PRODUCT(type, manufacturer, name) VALUES ('', '"+manufacturer+"', '"+productname+"');";
