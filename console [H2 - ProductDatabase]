@@ -1,0 +1,28 @@
+--This file creates the two databases, creates primary keys, and allows the user to access the databases comments.
+--Along with identifying names, types, manufacturers, product numbers, product id's, serial numbers, and dates produced.
+
+create table Product
+(
+    id           int auto_increment,
+    name         varchar,
+    type         varchar,
+    manufacturer varchar
+);
+
+create unique index Product_id_uindex
+    on Product (id);
+
+alter table Product
+    add constraint Product_pk
+        primary key (id);
+
+create table ProductionRecord
+(
+    production_num int auto_increment,
+    product_id     int,
+    serial_num     varchar,
+    date_produced  datetime
+);
+// selecting from product only brings up what has been added to the database
+SELECT *
+FROM Produc
