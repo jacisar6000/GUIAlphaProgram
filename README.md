@@ -15,4 +15,5 @@ https://noblecodemonkeys.com/how-to-use-observablelist-in-javafx-tutorial/,
 https://sites.google.com/site/profvanselow/course/cop-3003/oop-project
 
 Unable to put comments on fxml file.
-Diagrams appear and disappear when added in ReadMe so they are ther=ir own separate files in the repository. 
+
+Diagrams appear and disappear when added in ReadMe so they are therir own separate files in the repository. 
