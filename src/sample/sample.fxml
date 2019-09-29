@@ -19,7 +19,6 @@
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="761.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
   <tabs>
     <Tab fx:id="tabProductLine" text="Product Line">
-      <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="496.0" prefWidth="779.0">
                   <GridPane layoutX="15.0" layoutY="-3.0" prefHeight="176.0" prefWidth="732.0">
                     <columnConstraints>
@@ -56,11 +55,10 @@
                   <Label fx:id="labelChooseQuantity" layoutX="42.0" layoutY="130.0" text="Choose Quantity" />
                   <ComboBox fx:id="comboboxChooseQuantity" editable="true" layoutX="195.0" layoutY="125.0" prefWidth="150.0" />
                   <Button fx:id="buttonRecordProduction" layoutX="195.0" layoutY="193.0" mnemonicParsing="false" text="Record Production" />
-               </children></AnchorPane>
+               </AnchorPane>
     </Tab>
       <Tab fx:id="tabProducitonLog" text="Production Log">
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
                   <TextArea fx:id="textareaProductionLog" layoutX="48.0" layoutY="45.0" prefHeight="200.0" prefWidth="200.0" />
                </AnchorPane>
       </Tab>
