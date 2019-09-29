@@ -41,7 +41,7 @@ public class Controller implements Initializable {
         // .getSelectionModel().selectFirst(); puts the first number in the array as the default in the combo box
         comboboxChooseQuantity.getSelectionModel().selectFirst();
     }
-
+    //I'm aware that the @FMLX is a warning for each of these however, I'm unable to get rid of them
     @FXML
     private Tab tabProductLine;
 
