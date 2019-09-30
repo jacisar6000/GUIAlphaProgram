@@ -40,7 +40,13 @@ public class Controller implements Initializable {
         comboboxChooseQuantity.setItems(options);
         // .getSelectionModel().selectFirst(); puts the first number in the array as the default in the combo box
         comboboxChooseQuantity.getSelectionModel().selectFirst();
+
+            ObservableList<String> option =
+                FXCollections.observableArrayList( "Audio", "Film", "Recording", "Other");
+            choiceviewItemType.setItems(option);
     }
+
+
 
     @FXML
     private Tab tabProductLine;
