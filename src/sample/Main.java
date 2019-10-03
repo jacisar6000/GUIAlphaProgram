@@ -11,12 +11,12 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
+    //This is a class
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 780, 550)); // height and width of the the GUI
         primaryStage.show();
-
 
     }
 
