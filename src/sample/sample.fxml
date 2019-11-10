@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -16,7 +17,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<?import java.net.URL?>
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="761.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <Tab fx:id="tabProductLine" text="Product Line">
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="496.0" prefWidth="779.0">
@@ -40,8 +40,9 @@
             <Label fx:id="labelExistingProducts" layoutX="15.0" layoutY="202.0" text="Existing Products" />
             <TableView layoutX="15.0" layoutY="235.0" prefHeight="241.0" prefWidth="731.0">
                 <columns>
-                    <TableColumn prefWidth="75.0" text="C1" />
-                    <TableColumn prefWidth="75.0" text="C2" />
+                    <TableColumn prefWidth="103.0" text="Name" />
+                    <TableColumn prefWidth="100.0" text="Manufacturer" />
+               <TableColumn prefWidth="111.0" text="Type" />
                 </columns>
             </TableView>
             <Button fx:id="buttonAddProduct" layoutX="381.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#AddProduct" text="Add Product" />
@@ -62,6 +63,6 @@
         </AnchorPane>
     </Tab>
     <stylesheets>
-        <URL value="@product.css"/>
+        <URL value="@product.css" />
     </stylesheets>
 </TabPane>

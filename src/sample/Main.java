@@ -1,6 +1,6 @@
 package sample;
 
-//Joseph Cisar, 9/28/2019, This file allows the application to be ran and allows the application scene to be edited.
+//Joseph Cisar, 11/8/2019, This file allows the application to be ran and allows the application scene to be edited.
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
