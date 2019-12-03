@@ -12,10 +12,10 @@ public class ProductionRecord{
 
   //each one of these parameters is pass through the method to show the product that was produced and how many times it has been
   public ProductionRecord(Product productProduced, int itemCount){
-    //String format %05d allows the serieal number to end after 5 numbers
+    //String format %05d allows the serial number to end after 5 numbers
     String idNum = String.format("%05d" , itemCount);
     //(0,3) for the manufacturer will print the first 3 characters of the manufacturers name
-    this.serialNumber = productProduced.manufacturer.substring(0,3)+ productProduced.getType().getCode()+idNum;
+    this.serialNumber = productProduced.manufacturer.substring(0,3) + productProduced.getType().getCode() + idNum;
     //shows the date that the product was recorded
     this.dateProduced = new Date();
   }
@@ -66,9 +66,8 @@ public class ProductionRecord{
   public Date getProdDate(){
     return dateProduced;
   }
-  //updates the date producted that is bieng called upon
+  //updates the date produced that is being called upon
   public void setProdDate(Date dateProduced){
     this.dateProduced = dateProduced;
   }
-
 }

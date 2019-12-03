@@ -12,6 +12,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -33,33 +34,45 @@
                 <Label fx:id="labelProductName" text="Product Name" />
                 <Label fx:id="labelManufacturer" text="Manufacturer" GridPane.rowIndex="1" />
                 <Label fx:id="labelItemType" text="Item Type" GridPane.rowIndex="2" />
-                <TextField fx:id="textfieldProductName" GridPane.columnIndex="1" />
-                <TextField fx:id="textfieldManufacturer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <ChoiceBox fx:id="choiceviewItemType" onMouseClicked="#showItemType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="productName" GridPane.columnIndex="1" />
+                <TextField fx:id="manufacturer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <ChoiceBox fx:id="type" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             </GridPane>
-            <Label fx:id="labelExistingProducts" layoutX="15.0" layoutY="202.0" text="Existing Products" />
-            <TableView layoutX="15.0" layoutY="235.0" prefHeight="241.0" prefWidth="731.0">
+            <TableView fx:id="tvProduct" layoutX="15.0" layoutY="235.0" prefHeight="241.0" prefWidth="731.0">
+                <Label fx:id="labelExistingProducts" layoutX="15.0" layoutY="202.0" text="Existing Products" />
                 <columns>
-                    <TableColumn prefWidth="103.0" text="Name" />
-                    <TableColumn prefWidth="100.0" text="Manufacturer" />
-               <TableColumn prefWidth="111.0" text="Type" />
+                    <TableColumn fx:id="productNameCol" prefWidth="252.0" text="Name">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="Name" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    <TableColumn fx:id="manufacturerCol" prefWidth="229.0" text="Manufacturer">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="Manufacturer" />
+                        </cellValueFactory>
+                    </TableColumn>
+               <TableColumn fx:id="typeCol" prefWidth="249.0" text="Type">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Type" />
+                    </cellValueFactory>
+                </TableColumn>
                 </columns>
             </TableView>
-            <Button fx:id="buttonAddProduct" layoutX="381.0" layoutY="187.0" mnemonicParsing="false" onMouseClicked="#AddProduct" text="Add Product" />
+            <Button fx:id="addProduct" layoutX="381.0" layoutY="187.0" mnemonicParsing="false" onAction="#buttonAddProduct" text="Add Product" />
         </AnchorPane>
     </Tab>
-    <Tab fx:id="tabProduce" text="Produce">
+    <Tab fx:id="tabProduce" text="Products Log">
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <Label fx:id="labelChooseProduct" layoutX="42.0" layoutY="29.0" text="Choose Product" />
-            <ListView fx:id="listviewChooseProduct" layoutX="195.0" layoutY="29.0" prefHeight="69.0" prefWidth="207.0" />
-            <Label fx:id="labelChooseQuantity" layoutX="42.0" layoutY="130.0" text="Choose Quantity" />
-            <ComboBox fx:id="comboboxChooseQuantity" editable="true" layoutX="195.0" layoutY="125.0" prefWidth="150.0" />
-            <Button fx:id="buttonRecordProduction" layoutX="195.0" layoutY="193.0" mnemonicParsing="false" text="Record Production" />
+            <ListView fx:id="lvProduct" layoutX="195.0" layoutY="29.0" prefHeight="235.0" prefWidth="485.0" />
+            <Label fx:id="labelChooseQuantity" layoutX="42.0" layoutY="276.0" text="Choose Quantity" />
+            <ComboBox fx:id="chooseQuantity" editable="true" layoutX="195.0" layoutY="276.0" prefWidth="150.0" />
+            <Button fx:id="recordProduction" layoutX="194.0" layoutY="345.0" mnemonicParsing="false" onAction="#buttonRecordProduction" text="Record Production" />
         </AnchorPane>
     </Tab>
     <Tab fx:id="tabProducitonLog" text="Production Log">
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-            <TextArea fx:id="textareaProductionLog" layoutX="48.0" layoutY="45.0" prefHeight="200.0" prefWidth="200.0" />
+            <TextArea fx:id="productionLog" layoutX="48.0" layoutY="45.0" prefHeight="303.0" prefWidth="666.0" />
         </AnchorPane>
     </Tab>
     <stylesheets>

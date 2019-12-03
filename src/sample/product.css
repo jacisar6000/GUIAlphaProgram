@@ -1,15 +1,36 @@
 
-/**Joseph Cisar, 9/28/2019, This file styles the application's: background image/color, font-size, font-family,
-text-fill color, effects, and font-weighthh.**/
+/**Joseph Cisar, 9/28/2019, This file styles the application's: background sample.image/color, font-size, font-family,
+text-fill color, effects, and font-weight.**/
 
 .root {
-    -fx-background-image: url("http://content.sportslogos.net/logos/6/214/full/u6bxz6n2tlrjgwnyewlke2i54.png");
+    -fx-background-image: url("image/heatproject.png");
 }
 
-.label {
-    -fx-font-size: 12px;
+#labelProductName {
+    -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333333;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+#labelManufacturer {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+#labelItemType {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+
+#tvProduct {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
     -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 

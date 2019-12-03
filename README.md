@@ -42,7 +42,7 @@ Product:
 This file allows the application to implements the item class, return specific information on the product such as its name, manufacturer, type of product, prints the product to the user and is the main driver behind the controller to edit the GUI.
 
 Product.CSS:
-This file styles the application's: background image/color, font-size, font-family, text-fill color, effects, and font-weighthh.
+This file styles the application's: background sample.image/color, font-size, font-family, text-fill color, effects, and font-weighthh.
 
 Production Record:
 This file allows the application to take record of each product that is produced, its: serial number, ID, the date it was produced, and the number of products that have been produced. When used in the GUI the production record should show the information on any of the items entered into the database.

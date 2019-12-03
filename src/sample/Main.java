@@ -14,8 +14,9 @@ public class Main extends Application {
     //This is a class
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 780, 550)); // height and width of the the GUI
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Product Information");
+        primaryStage.setScene(scene); // height and width of the the GUI
         primaryStage.show();
 
     }
@@ -24,3 +25,4 @@ public class Main extends Application {
         launch(args);
     }
 }
+

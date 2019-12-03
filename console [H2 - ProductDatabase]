@@ -25,4 +25,4 @@ create table ProductionRecord
 );
 // selecting from product only brings up what has been added to the database
 SELECT *
-FROM Produc
+FROM Product

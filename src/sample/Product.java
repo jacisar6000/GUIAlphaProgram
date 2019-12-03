@@ -6,7 +6,8 @@ import javafx.scene.Scene;
 // implementing the Item class will allow the Product class to get and set the names of the manufacturer and product
 public class Product implements Item {
 
-  public ItemType type;
+  private ItemType type;
+//  public String type;
   public String manufacturer;
   public String name;
   //each one of these parameters is pass through the method to show the name, manufacturer, and type
@@ -50,9 +51,3 @@ public class Product implements Item {
   public void show() {
   }
 }
-
-
-
-
-
-
