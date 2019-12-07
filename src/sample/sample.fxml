@@ -21,7 +21,7 @@
 <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="529.0" prefWidth="761.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <Tab fx:id="tabProductLine" text="Product Line">
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="496.0" prefWidth="779.0">
-            <GridPane layoutX="15.0" layoutY="-3.0" prefHeight="176.0" prefWidth="732.0">
+            <GridPane fx:id="gridPaneLabel" layoutX="15.0" layoutY="-3.0" prefHeight="176.0" prefWidth="732.0">
                 <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -75,6 +75,18 @@
             <TextArea fx:id="productionLog" layoutX="48.0" layoutY="45.0" prefHeight="303.0" prefWidth="666.0" />
         </AnchorPane>
     </Tab>
+   <Tab fx:id="employeeTab" text="Employee">
+     <content>
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <children>
+               <TextField layoutX="56.0" layoutY="104.0" />
+               <TextField layoutX="56.0" layoutY="150.0" />
+               <TextField layoutX="56.0" layoutY="198.0" />
+               <TextField layoutX="56.0" layoutY="245.0" />
+            </children>
+         </AnchorPane>
+     </content>
+   </Tab>
     <stylesheets>
         <URL value="@product.css" />
     </stylesheets>

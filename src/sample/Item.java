@@ -1,13 +1,33 @@
 package sample;
-//Joseph Cisar, 11/8/2019, This file allows the applications to retrieve the name and manufacturers of the items entered
+
+/**
+ * Joseph Cisar, 11/8/2019, This file allows the applications to retrieve the name
+ * and manufacturers of the items entered.
+ */
 public interface Item {
-  //updates the name of the item
+
+  /**
+   * Updates the name of the item.
+   * @param name
+   */
   void setName(String name);
-  //retrieves the name
+
+  /**
+   * Retrieves the name.
+   * @return
+   */
   String getName();
-  //updates the same of the manufacturer
+
+  /**
+   * Updates the same of the manufacturer.
+   * @param manufacturer
+   */
   void setManufacturer(String manufacturer);
-  //retrieves the manufacturer
+
+  /**
+   * Retrieves the manufacturer.
+   * @return
+   */
   String getManufacturer();
 
 }
