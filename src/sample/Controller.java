@@ -341,6 +341,7 @@ public class Controller {
     displayLog();
 
   }
+
   @FXML
   void createAccountButton(ActionEvent event) throws SQLException {
     String name = employeeNameTextField.getText();
@@ -364,35 +365,39 @@ public class Controller {
     /**
      * Selects the item in the list vew text area.
      */
-    Product record = lvProduct.getSelectionModel().getSelectedItem();
+    try {
+      Product record = lvProduct.getSelectionModel().getSelectedItem();
 
-    int quantity;
-    /**
-     * Choose the quantity of items that were produced from the observable list.
-     */
-    quantity = Integer
-        .parseInt(String.valueOf(chooseQuantity.getSelectionModel().getSelectedItem()));
+      int quantity;
+      /**
+       * Choose the quantity of items that were produced from the observable list.
+       */
+      quantity = Integer
+          .parseInt(String.valueOf(chooseQuantity.getSelectionModel().getSelectedItem()));
 
-    ProductionRecord pr;
-    /**
-     * This for loop is for adding the text into the production log for a certain
-     * amount of times.
-     */
-    for (int i = 0; i < quantity; i++) {
-      pr = new ProductionRecord(record, i);
-      productionRun.add(pr);
+      ProductionRecord pr;
       /**
-       * Adds the production record in the product log.
+       * This for loop is for adding the text into the production log for a certain
+       * amount of times.
        */
-      addToProductionLog(productionRun);
-      /**
-       * Shows the production record.
-       */
-      showProduction(productionRun);
-      /**
-       * Loads the production record into the production log.
-       */
-      loadProductionLog(productionRun);
+      for (int i = 0; i < quantity; i++) {
+        pr = new ProductionRecord(record, i);
+        productionRun.add(pr);
+        /**
+         * Adds the production record in the product log.
+         */
+        addToProductionLog(productionRun);
+        /**
+         * Shows the production record.
+         */
+        showProduction(productionRun);
+        /**
+         * Loads the production record into the production log.
+         */
+        loadProductionLog(productionRun);
+      }
+    } catch(Exception e){
+      e.printStackTrace();
     }
   }
 
