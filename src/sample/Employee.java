@@ -78,7 +78,7 @@ public class Employee {
   }
 
   public String toString() {
-    return "Employee Details\n" + "Name : " + name + "\n" + "Username : " + username + "\n"
+    return "Employee Details\n" + "Name  : " + name + "\n" + "Username : " + username + "\n"
         + "Email : " + email + "\n" + "Initial Password : " + password;
   }
 
