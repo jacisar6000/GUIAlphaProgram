@@ -23,6 +23,9 @@ This file allows the application to show the user what the type of audio players
 Controller:
 This file controls what the application is able to accomplish. It implements and initializes arrays, shows all of the objects and fx:id's that have been added tot he application, and allows the user to interact with the application but inputting and outputting informationMonitor into a database.
 
+Employee:
+This class is set to create a new employee account and gives the employee a default email and username when the employees name is entered.
+
 Item:
 This file allows the applications to retrieve the name and manufacturers of the items entered.
 
