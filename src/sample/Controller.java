@@ -99,6 +99,21 @@ public class Controller {
   @FXML
   private Tab employeeTab;
 
+  @FXML
+  private TextField employeeNameTextField;
+
+  @FXML
+  private TextField employeePasswordTextField;
+
+  @FXML
+  private Label labelEmployeeDetails;
+
+  @FXML
+  private Button loginButton;
+
+  @FXML
+  private TextArea employeeTextArea;
+
   /**
    * A local observable array list drops down when the type of product is is clicked.
    */
@@ -214,6 +229,24 @@ public class Controller {
     }
   }
 
+  private void loadEmployee(ObservableList<Product> productLine) throws SQLException {
+    String sql = "SELECT * FROM PRODUCT";
+    stmt = conn.createStatement();
+    ResultSet rs = stmt.executeQuery(sql);
+
+    while (rs.next()) {
+      String name = rs.getString(2);
+      String manu = rs.getString(3);
+      String chooseItem = rs.getString(4);
+
+      /**
+       * Enters the name, manufacturer, and type of product into the database.
+       */
+      Product dbProduct = new Product(name, manu, ItemType.valueOf(chooseItem));
+      productLine.add(dbProduct);
+    }
+  }
+
   /**
    * This function adds the information entered into the production table.
    */
@@ -306,6 +339,19 @@ public class Controller {
      * Displays the product line in the production log.
      */
     displayLog();
+
+  }
+  @FXML
+  void createAccountButton(ActionEvent event) throws SQLException {
+    String name = employeeNameTextField.getText();
+
+    String password = employeePasswordTextField.getText();
+
+    Employee employee = new Employee(name, password);
+
+    employeeTextArea.setText(employee.toString());
+
+    System.out.println("Your account has been created");
 
   }
 
