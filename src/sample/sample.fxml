@@ -70,7 +70,7 @@
             <Button fx:id="recordProduction" layoutX="194.0" layoutY="345.0" mnemonicParsing="false" onAction="#buttonRecordProduction" text="Record Production" />
         </AnchorPane>
     </Tab>
-    <Tab fx:id="tabProducitonLog" text="Production Log">
+    <Tab fx:id="tabProductionLog" text="Production Log">
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <TextArea fx:id="productionLog" layoutX="48.0" layoutY="45.0" prefHeight="303.0" prefWidth="666.0" />
         </AnchorPane>
@@ -79,10 +79,10 @@
      <content>
        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
             <children>
-               <TextField layoutX="56.0" layoutY="104.0" />
-               <TextField layoutX="56.0" layoutY="150.0" />
-               <TextField layoutX="56.0" layoutY="198.0" />
-               <TextField layoutX="56.0" layoutY="245.0" />
+               <TextField fx:id="employeNameTextField" layoutX="56.0" layoutY="103.0" promptText="Name" />
+               <TextField fx:id="employeePasswordTextField" layoutX="56.0" layoutY="142.0" promptText="Password" />
+               <Label fx:id="labelEmployeeDetails" layoutX="56.0" layoutY="71.0" text="Employee Details:" />
+               <Button fx:id="loginButton" layoutX="56.0" layoutY="214.0" mnemonicParsing="false" text="Login" />
             </children>
          </AnchorPane>
      </content>

@@ -351,8 +351,9 @@ public class Controller {
   }
 
   /**
-   * This function initializes the the choice list and enters the number of
-   * strings into the production log.
+   * This function initializes the the choice list and enters the number of strings into the
+   * production log.
+   *
    * @throws SQLException
    */
   public void initialize() throws SQLException {
