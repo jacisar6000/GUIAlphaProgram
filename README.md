@@ -7,7 +7,7 @@ in a production log book. Management would like the production tracking to be mo
 as much time recording what was produced, the log will be more accurate, and it will be easier to generate production reports. 
 
 ## JavaDocs Link: 
-[Click Here](file:///C:/Users/jacisar/IdeaProjects/GUIAlphaProgram/docs/index.html)
+(file:///C:/Users/jacisar/IdeaProjects/GUIAlphaProgram/docs/index.html)
 
 ## Software Used:
 IntelliJ IDE, SceneBuilder, H2 Database
@@ -17,48 +17,50 @@ Christian McCann, https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm,
 https://noblecodemonkeys.com/how-to-use-observablelist-in-javafx-tutorial/, 
 https://sites.google.com/site/profvanselow/course/cop-3003/oop-project
 
-###### Audio Player:
+## Class Descriptions:
+
+###### Audio Player
 This file allows the application to show the user what the type of audio players are capable of extending product will implement the MultimediaControl class.
 
-###### Controller:
+###### Controller
 This file controls what the application is able to accomplish. It implements and initializes arrays, shows all of the objects and fx:id's that have been added tot he application, and allows the user to interact with the application but inputting and outputting informationMonitor into a database.
 
-###### Employee:
+###### Employee
 This class is set to create a new employee account and gives the employee a default email and username when the employees name is entered.
 
-###### Item:
+###### Item
 This file allows the applications to retrieve the name and manufacturers of the items entered.
 
-###### Item Type:
+###### Item Type
 This file allows the application to ItemTypes to be abbreviated for when they are shown in the observable array list it allows a more polished look for the user.
 
-###### Main:
+###### Main
 This file allows the application to be ran and allows the application scene to be edited.
 
-###### Monitor Type:
+###### Monitor Type
 This file allows the application to show the two different types of monitors.
 
-###### Movie Player:
+###### Movie Player
 This file allows the application to show different types of monitors, extend and implement other classes, show the user interactive options while viewing movies.
 
-###### Multimedia Control:
+###### Multimedia Control
 This file allows the user to play or stop music, and go to the next or previous song.
 
-###### Product:
+###### Product
 This file allows the application to implements the item class, return specific information on the product such as its name, manufacturer, type of product, prints the product to the user and is the main driver behind the controller to edit the GUI.
 
-###### Production Record:
+###### Production Record
 This file allows the application to take record of each product that is produced, its: serial number, ID, the date it was produced, and the number of products that have been produced. When used in the GUI the production record should show the information on any of the items entered into the database.
 
-###### Sample:
+###### Sample
 This file allows for the GUI to be ran and holds all of the specifications that were altered in SceneBuilder.
 
-###### Screen:
+###### Screen
 This file allows the application to show the user specifications of the screen by implementing screen specifications.
 
-###### Screen Specification:
+###### Screen Specification
 This file allows the application to calls and return the screen specifications and return them to the screen.
 
-###### Widget:
+###### Widget
 This file allows the application to extend the product and enter the name, manufacturer, and type into the tableview.
 
