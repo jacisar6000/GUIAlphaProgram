@@ -1,5 +1,5 @@
 # Production Line Tracker
-# GUIRelease Joseph Cisar, 12/7/2019
+# GUIRelease Joseph Cisar - Software Engineering Major and Computer Information Systems Minor student at Florida Gulf Coast University, 12/7/2019
 
 I have been hired to create software for a media player production facility that will keep track of what products are produced. 
 Without the software, workers on the production floor are physically producing items and having to write down what is produced 
@@ -26,6 +26,8 @@ as much time recording what was produced, the log will be more accurate, and it 
 - https://docs.oracle.com/javafx/2/ui_controls/combo-box.htm
 - https://noblecodemonkeys.com/how-to-use-observablelist-in-javafx-tutorial/
 - https://sites.google.com/site/profvanselow/course/cop-3003/oop-
+- Professor Scott VanSelow
+- Repl.it
 
 ## Throughout the Semester
 ## Sprint 1 Alpha
