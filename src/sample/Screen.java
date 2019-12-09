@@ -18,19 +18,13 @@ public class Screen implements ScreenSpec {
     return resolution;
   }
 
-  /**
-   * Returns the refresh rate of the screen to the user.
-   * @return
-   */
+  // Returns the refresh rate of the screen to the user.
   public int getRefreshRate() {
     return refreshRate;
   }
 
-  /**
-   * returns the screens response time to the user.
-   * @return
-   */
-  public int getResponseTime() {
+  // Returns the screens response time to the user
+    public int getResponseTime() {
     return responseTime;
   }
 
@@ -49,9 +43,8 @@ public class Screen implements ScreenSpec {
   }
 
   public String toString() {
-    /**
-     * Returns the parameters to the user.
-     */
+
+    // Returns parameters to the users
     return "Screen:" + '\n' + "Resolution: " + resolution + '\n' + "Refresh rate: " + refreshRate
         + '\n' + "Response time: " + responseTime;
 

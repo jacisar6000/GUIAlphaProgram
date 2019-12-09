@@ -5,9 +5,8 @@ package sample;
  * different types of monitors
  */
 public enum MonitorType {
-  /**
-   * Types of monitors
-   */
+
+  // Types of monitors
   LCD, LED;
 
 }

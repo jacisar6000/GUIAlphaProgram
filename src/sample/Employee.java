@@ -29,10 +29,9 @@ public class Employee {
       setUsername(name);
       setEmail(name);
     }
-    /**
-     * This else statement allows the username to become default and the users
-     * first inital and last name will be placed in front of the @ symbol in the email
-     */
+
+    //  This else statement allows the username to become default and the users
+    //  first initial and last name will be placed in front of the @ symbol in the email
     else {
       username = "default";
       email = "user@oracleacedemy.Test";
@@ -86,9 +85,6 @@ public class Employee {
     nameAfterSpaceMatch.find();
     String lastName = nameAfterSpaceMatch.group(1);
 
-    /**
-     * This part
-     */
     this.email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@oracleacademy.Test";
   }
 

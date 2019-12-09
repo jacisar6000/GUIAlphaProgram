@@ -6,28 +6,17 @@ package sample;
  */
 public interface Item {
 
-  /**
-   * Updates the name of the item.
-   * @param name
-   */
+   // Updates the name of the item.
+   // @param name
   void setName(String name);
 
-  /**
-   * Retrieves the name.
-   * @return
-   */
+  // Retrives the name
   String getName();
 
-  /**
-   * Updates the same of the manufacturer.
-   * @param manufacturer
-   */
+  // Updates the name of the manufacturer
   void setManufacturer(String manufacturer);
 
-  /**
-   * Retrieves the manufacturer.
-   * @return
-   */
+  // Retrives the manufacturer
   String getManufacturer();
 
 }

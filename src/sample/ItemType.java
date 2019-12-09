@@ -5,9 +5,8 @@ package sample;
  * for when they are shown in the observable array list it allows a more polished look for the user.
  */
 public enum ItemType {
-  /**
-   * Allows for each of the following below to be shown in the observable array list.
-   */
+
+   // Allows for each of the following below to be shown in the observable array list.
   AUDIO("AU"),
   Visual("VI"),
   AudioMobile("AM"),
@@ -23,10 +22,7 @@ public enum ItemType {
     codes = code;
   }
 
-  /**
-   * Returns the code in the observable array list.
-   * @return
-   */
+  // Returns the code in the observable array list.
   public String getCode() {
     return this.codes;
   }

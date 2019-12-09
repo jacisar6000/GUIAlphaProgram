@@ -91,19 +91,16 @@ public class Controller {
   private Button recordProduction;
 
   @FXML
-  private Tab tabProducitonLog;
-
-  @FXML
   private TextArea productionLog;
 
   @FXML
   private Tab employeeTab;
 
   @FXML
-  private TextField employeeNameTextField;
+  private TextField txtName;
 
   @FXML
-  private TextField employeePasswordTextField;
+  private TextField txtPassword;
 
   @FXML
   private Label labelEmployeeDetails;
@@ -112,32 +109,24 @@ public class Controller {
   private Button loginButton;
 
   @FXML
-  private TextArea employeeTextArea;
+  private TextArea txtEmpInfo;
 
-  /**
-   * A local observable array list drops down when the type of product is is clicked.
-   */
+  // A local observable array list drops down when the type of product is is clicked.
   private ObservableList<Product> productLine = FXCollections.observableArrayList();
-  /**
-   * A local observable array list drops down when the number of products has been clicked.
-   */
+
+  // A local observable array list drops down when the number of products has been clicked.
   private ObservableList<String> choiceList = FXCollections.observableArrayList();
 
-  /**
-   * When the record button is clicked, the amount of products produced is assigned to the
-   * production log once.
-   */
+  // When the record button is clicked, the amount of products produced is assigned to the
+  // production log once.
   final ArrayList<ProductionRecord> productionRun = new ArrayList<>();
 
-  /**
-   * These are both local variables conn creates the connection to the database and stmt allows for
-   * SQL statements to be created.
-   */
+   // These are both local variables conn creates the connection to the database and stmt allows for
+   // SQL statements to be created.
   private Connection conn;
   private Statement stmt;
-  /**
-   * The prepared statement allows the SQL queries to be executed.
-   */
+
+  // The prepared statement allows the SQL queries to be executed.
   private PreparedStatement pstmt;
 
   /**
@@ -147,21 +136,25 @@ public class Controller {
    * @param productLine
    * @throws SQLException
    */
-  private void loadProductList(ObservableList<Product> productLine) throws SQLException {
-    String sql = "SELECT * FROM PRODUCT";
-    stmt = conn.createStatement();
-    ResultSet rs = stmt.executeQuery(sql);
+  private void loadProductList(ObservableList<Product> productLine){
+    try {
+      String sql = "SELECT * FROM PRODUCT";
+      stmt = conn.createStatement();
+      ResultSet rs = stmt.executeQuery(sql);
 
-    while (rs.next()) {
-      String name = rs.getString(2);
-      String manu = rs.getString(3);
-      String chooseItem = rs.getString(4);
+      while (rs.next()) {
+        String name = rs.getString(2);
+        String manufacturer = rs.getString(3);
+        String chooseItem = rs.getString(4);
 
-      /**
-       * Enters the name, manufacturer, and type of product into the database.
-       */
-      Product dbProduct = new Product(name, manu, ItemType.valueOf(chooseItem));
-      productLine.add(dbProduct);
+        /**
+         * Enters the name, manufacturer, and type of product into the database.
+         */
+        Product dbProduct = new Product(name, manufacturer, ItemType.valueOf(chooseItem));
+        productLine.add(dbProduct);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
   }
 
@@ -173,16 +166,13 @@ public class Controller {
    */
   private void setupProductLine(ObservableList<Product> productLine) {
     productNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-    manufacturerCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-    typeCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+    manufacturerCol.setCellValueFactory(new PropertyValueFactory<>("manufacturer"));
+    typeCol.setCellValueFactory(new PropertyValueFactory<>("type"));
 
-    /**
-     * This action sets the items entered into the table view.
-     */
+    // This action sets the items entered into the table view.
     tvProduct.setItems(this.productLine);
-    /**
-     * This action sets the items in a horizontal/vertical list in the table view.
-     */
+
+    // This action sets the items in a horizontal/vertical list in the table view.
     lvProduct.setItems(this.productLine);
   }
 
@@ -211,39 +201,39 @@ public class Controller {
    * @param productionRun
    * @throws SQLException
    */
-  private void loadProductionLog(ArrayList<ProductionRecord> productionRun) throws SQLException {
-    String sql = "SELECT * FROM PRODUCTIONRECORD";
-    stmt = conn.createStatement();
+  private void loadProductionLog(ArrayList<ProductionRecord> productionRun){
+    try {
+      String sql = "SELECT * FROM PRODUCTIONRECORD";
+      stmt = conn.createStatement();
 
-    ResultSet rs = stmt.executeQuery(sql);
-    while (rs.next()) {
-      int number = rs.getInt("PRODUCTION_NUM");
-      int id = rs.getInt("PRODUCT_ID");
-      String serial = rs.getString("SERIAL_NUM");
-      Date date = rs.getDate("DATE_PRODUCED");
+      ResultSet rs = stmt.executeQuery(sql);
+      while (rs.next()) {
+        int number = rs.getInt("PRODUCTION_NUM");
+        int id = rs.getInt("PRODUCT_ID");
+        String serial = rs.getString("SERIAL_NUM");
+        Date date = rs.getDate("DATE_PRODUCED");
 
-      ProductionRecord dbRecord = new ProductionRecord(number, id, serial, date);
+        ProductionRecord dbRecord = new ProductionRecord(number, id, serial, date);
 
-      productionRun.add(dbRecord);
-      showProduction(productionRun);
+        productionRun.add(dbRecord);
+        showProduction(productionRun);
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
     }
   }
 
-  private void loadEmployee(ObservableList<Product> productLine) throws SQLException {
-    String sql = "SELECT * FROM PRODUCT";
-    stmt = conn.createStatement();
-    ResultSet rs = stmt.executeQuery(sql);
+  private void loadEmployee(){
+    try{
+    String name = txtName.getText();
 
-    while (rs.next()) {
-      String name = rs.getString(2);
-      String manu = rs.getString(3);
-      String chooseItem = rs.getString(4);
+    String password = txtPassword.getText();
 
-      /**
-       * Enters the name, manufacturer, and type of product into the database.
-       */
-      Product dbProduct = new Product(name, manu, ItemType.valueOf(chooseItem));
-      productLine.add(dbProduct);
+    Employee info = new Employee(name, password);
+
+    txtEmpInfo.setText(String.valueOf(info));
+    } catch (Exception e) {
+      e.printStackTrace();
     }
   }
 
@@ -251,149 +241,121 @@ public class Controller {
    * This function adds the information entered into the production table.
    */
   private void addToProductionLog(ArrayList<ProductionRecord> productionRun) throws SQLException {
-    /**
-     * These are fields for the serial number, timestamp and productID.
-     */
+
+    // These are fields for the serial number, timestamp and productID.
     for (ProductionRecord pr : productionRun) {
       int prodID = pr.getProductID();
       String serialNum = pr.getSerialNum();
       Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-      /**
-       * This string enters the productID, serial number, and date into a query in the database.
-       */
+
+       // This string enters the productID, serial number, and date into a query in the database.
       String sql = "INSERT INTO PRODUCTIONRECORD(PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED) VALUES (?,?,?)";
       pstmt = conn.prepareStatement(sql);
-      /**
-       * The prepared statement sets the the productionID, serialNumber, and date.
-       */
+
+      // The prepared statement sets the the productionID, serialNumber, and date.
       pstmt.setInt(1, prodID);
       pstmt.setString(2, serialNum);
       pstmt.setTimestamp(3, timestamp);
 
       pstmt.executeUpdate();
-      /**
-       * This displays the prepared statement to the production log.
-       */
+
+       // This displays the prepared statement to the production log.
       showProduction(productionRun);
     }
   }
 
-  @FXML
   /**
    * When the add product button is clicked, the action adds the information to the database.
    */
-  void buttonAddProduct(ActionEvent event) throws SQLException {
+  @FXML
+  private void buttonAddProduct(ActionEvent event){
+    try {
+      // Allows the text from the product name to be added to the.
+      String name = productName.getText();
 
-    /**
-     * Allows the text from the product name to be added to the.
-     */
-    String name = productName.getText();
-    /**
-     * A the text from the manufacturer to be added to the database.
-     */
-    String manu = manufacturer.getText();
-    /**
-     * Allows the quantity chosen to be added to the database.
-     */
-    String chooseItem = type.getValue();
-    /**
-     * Values (?,?,?) is a placeholder for the name, manufacturer and type.
-     * When add product is clicked, the variables take place of the placeholders.
-     */
-    String query = "INSERT INTO PRODUCT (NAME, MANUFACTURER, TYPE) VALUES (?,?,?)";
+      // A the text from the manufacturer to be added to the database.
+      String manu = manufacturer.getText();
 
-    pstmt = conn.prepareStatement(query);
-    /**
-     * Sets the product name string into the first placeholder.
-     */
-    pstmt.setString(1, name);
-    /**
-     * Sets the manufacturer string into the second placeholder.
-     */
-    pstmt.setString(2, manu);
-    /**
-     * Sets the item type into the third placeholder.
-     */
-    pstmt.setString(3, chooseItem);
-    pstmt.executeUpdate();
+      // Allows the quantity chosen to be added to the database.
+      String chooseItem = type.getValue();
 
-    System.out.println("Entered");
+      // Values (?,?,?) is a placeholder for the name, manufacturer and type.
+      // When add product is clicked, the variables take place of the placeholders.
+      String query = "INSERT INTO PRODUCT (NAME, MANUFACTURER, TYPE) VALUES (?,?,?)";
 
-    /**
-     * Clears the data entered that was entered into the text field once add
-     * product has been clicked.
-     */
-    productName.clear();
-    manufacturer.clear();
+      pstmt = conn.prepareStatement(query);
 
-    /**
-     * Calling the loadProductList function and adding the product line to it.
-     */
-    loadProductList(productLine);
-    /**
-     * Calling the setupProductLine function and adding the product line to it.
-     */
-    setupProductLine(productLine);
-    /**
-     * Displays the product line in the production log.
-     */
-    displayLog();
+      // Sets the product name string into the first placeholder.
+      pstmt.setString(1, name);
 
+      // Sets the manufacturer string into the second placeholder.
+      pstmt.setString(2, manu);
+
+      // Sets the item type into the third placeholder.
+      pstmt.setString(3, chooseItem);
+      pstmt.executeUpdate();
+
+      System.out.println("Entered");
+
+      // Clears the data entered that was entered into the text field once add
+      // product has been clicked.
+      productName.clear();
+      manufacturer.clear();
+
+      // Calling the loadProductList function and adding the product line to it.
+      loadProductList(productLine);
+
+      // Calling the setupProductLine function and adding the product line to it.
+      setupProductLine(productLine);
+
+      // Displays the product line in the production log.
+      displayLog();
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
   }
 
+  /**
+   *
+   *
+   * @param event
+   */
   @FXML
-  void createAccountButton(ActionEvent event) throws SQLException {
-    String name = employeeNameTextField.getText();
-
-    String password = employeePasswordTextField.getText();
-
-    Employee employee = new Employee(name, password);
-
-    employeeTextArea.setText(employee.toString());
-
-    System.out.println("Your account has been created");
-
+  public void buttonEmployeeLogin(ActionEvent event){
+      loadEmployee();
   }
 
-  @FXML
   /**
    * This function allows the product quantity and string chosen to be added
    * into the production log when record button is clicked.
    */
+  @FXML
   void buttonRecordProduction(ActionEvent event) throws SQLException {
-    /**
-     * Selects the item in the list vew text area.
-     */
+     // Selects the item in the list vew text area.
     try {
       Product record = lvProduct.getSelectionModel().getSelectedItem();
 
+      // Choose the quantity of items that were produced from the observable list.
       int quantity;
-      /**
-       * Choose the quantity of items that were produced from the observable list.
-       */
       quantity = Integer
           .parseInt(String.valueOf(chooseQuantity.getSelectionModel().getSelectedItem()));
 
       ProductionRecord pr;
-      /**
-       * This for loop is for adding the text into the production log for a certain
-       * amount of times.
-       */
+
+      // This for loop is for adding the text into the production log for a certain
+      //amount of times.
       for (int i = 0; i < quantity; i++) {
         pr = new ProductionRecord(record, i);
         productionRun.add(pr);
-        /**
-         * Adds the production record in the product log.
-         */
+
+        // Adds the production record in the product log.
         addToProductionLog(productionRun);
-        /**
-         * Shows the production record.
-         */
+
+         // Shows the production record.
         showProduction(productionRun);
-        /**
-         * Loads the production record into the production log.
-         */
+
+        // Loads the production record into the production log.
         loadProductionLog(productionRun);
       }
     } catch(Exception e){
@@ -404,13 +366,10 @@ public class Controller {
   /**
    * This function initializes the the choice list and enters the number of strings into the
    * production log.
-   *
-   * @throws SQLException
    */
-  public void initialize() throws SQLException {
-    /**
-     * Initializes the database.
-     */
+  public void initialize() {
+
+     // Initializes the database.
     initializeDB();
 
     for (ItemType it : ItemType.values()) {
@@ -418,21 +377,18 @@ public class Controller {
     }
 
     type.getItems().addAll(choiceList);
-    /**
-     * This observable array list creates a dropdown box that contains quantities.
-     */
-    ObservableList<Integer> list = FXCollections.observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-    /**
-     * Sets a quantity for the amount of items.
-     */
+
+    // This observable array list creates a dropdown box that contains quantities.
+    ObservableList<Integer> list = FXCollections
+        .observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+     // Sets a quantity for the amount of items.
     chooseQuantity.setItems(list);
-    /**
-     * Selects the amount of products ordered of the certain product.
-     */
+
+    // Selects the amount of products ordered of the certain product.
     chooseQuantity.getSelectionModel().selectFirst();
-    /**
-     * The quantity isn't universal and it's able  to be changed.
-     */
+
+    // The quantity isn't universal and it's able  to be changed.
     chooseQuantity.setEditable(true);
 
     loadProductList(productLine);
@@ -442,33 +398,23 @@ public class Controller {
   }
 
   private void initializeDB() {
-
-    /**
-     * Unable to run the program without this code, I acknowledge it is a bug.
-     */
+    // Unable to run the program without this code, I acknowledge it is a bug.
     final String JDBC_DRIVER = "org.h2.Driver";
-    /**
-     * Unable to run the program without this code, I acknowledge it is a bug.
-     */
-    final String db_url = "jdbc:h2:./res/ProductDatabase";
-    /**
-     * Unable to run the program without this code, I acknowledge it is a bug.
-     */
+
+    //  Unable to run the program without this code, I acknowledge it is a bug.
+    final String db_url = "jdbc:h2:./res/ProductDb";
+
+    // Unable to run the program without this code, I acknowledge it is a bug.
     final String user = "";
-    /**
-     * Unable to run the program without this code, I acknowledge it is a bug.
-     */
+
+    // Unable to run the program without this code, I acknowledge it is a bug.
     final String pass = "";
 
     try {
-      /**
-       * STEP 1: Register JDBC driver.
-       */
+      // STEP 1: Register JDBC driver.
       Class.forName(JDBC_DRIVER);
 
-      /**
-       * STEP 2: Open a connection.
-       */
+      // Open a connection.
       conn = DriverManager.getConnection(db_url, user, pass);
 
     } catch (ClassNotFoundException | SQLException e) {

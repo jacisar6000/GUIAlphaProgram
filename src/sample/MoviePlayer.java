@@ -14,32 +14,29 @@ public class MoviePlayer extends Product implements MultimediaControl {
   /**
    *   Each one of these parameters is pass through the method to show
    *   the name, manufacturer, screen, and monitorType.
+   *   Using ItemType.Visual, it allowed me to bypass errors of conflicting ItemType with
+   *   Strings.
    * @param name
    * @param manufacturer
    * @param screen
    * @param monitorType
    */
   public MoviePlayer(String name, String manufacturer, Screen screen, MonitorType monitorType) {
-    /**
-     * Using ItemType.Visual, it allowed me to bypass errors of conflicting ItemType with
-     * Strings.
-     */
+
     super(name, manufacturer, ItemType.Visual);
     this.screen = screen;
     this.monitorType = monitorType;
   }
 
   public String toString() {
-    /**
-     * Returns the type of monitor.
-     */
+
+    // Returns the type of monitor
     return super.toString() + screen + "Monitor Type:" + monitorType;
   }
 
-  /**
-   * Each of these print statements below will print the text shown onto to screen
-   * for the user to see.
-   */
+  // Each of these print statements below will print the text shown onto to screen
+  // for the user to see.
+
   public void play() {
     System.out.println("Playing movie");
   }

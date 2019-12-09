@@ -68,7 +68,8 @@ public class ProductionRecord {
 
   public String toString() {
     return "Prod. Num: " + productionNumber + " Product ID: " + productID + " Serial Num: "
-        + serialNumber + " Date: " + dateProduced;
+        + serialNumber + " Date: " + dateProduced + "\n";
+
   }
 
   /**
@@ -119,18 +120,12 @@ public class ProductionRecord {
     this.serialNumber = serialNumber;
   }
 
-  /**
-   * Calls for the date produced and returns it.
-   * @return
-   */
+  // Calls for the date produced and returns it.
   public Date getProdDate() {
     return dateProduced;
   }
 
-  /**
-   * Updates the date produced that is being called upon.
-   * @param dateProduced
-   */
+  // Updates the date produced that is being called upon.
   public void setProdDate(Date dateProduced) {
     this.dateProduced = dateProduced;
   }

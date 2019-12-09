@@ -33,10 +33,8 @@ public class Product implements Item {
     this.type = type;
   }
 
-  /**
-   * Updates and retrieves the type of item chosen.
-   * @return
-   */
+  // Updates and retrieves the type of item chosen.
+
   public ItemType getType() {
     return type;
   }
@@ -45,10 +43,8 @@ public class Product implements Item {
     this.type = type;
   }
 
-  /**
-   * Updates and retrieves the type of manufacturer chosen.
-   * @return
-   */
+  // Updates and retrieves the type of manufacturer chosen.
+
   public String getManufacturer() {
     return manufacturer;
   }
@@ -57,10 +53,10 @@ public class Product implements Item {
     this.manufacturer = manufacturer;
   }
 
-  /**
-   * Updates and retrieves the name chosen.
-   * @return
-   */
+
+  //  Updates and retrieves the name chosen.
+  //  @return
+
   public String getName() {
     return name;
   }
@@ -69,10 +65,8 @@ public class Product implements Item {
     this.name = name;
   }
 
-  /**
-   * Prints out the type of product, manufacturer, and name of the product.
-   * @return
-   */
+  // Prints out the type of product, manufacturer, and name of the product.
+
   public String toString() {
     return "Product{"
         + ", Type = '" + type + '\'' + ", Manufacturer = '"
