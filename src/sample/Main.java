@@ -18,7 +18,7 @@ public class Main extends Application {
     Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
     Scene scene = new Scene(root);
     root.setId("pane");
-    primaryStage.setTitle("Product Information");
+    primaryStage.setTitle("Product Information.");
     primaryStage.setScene(scene);
     primaryStage.show();
     scene.getStylesheets().add(Main.class.getResource("product.css").toExternalForm());
