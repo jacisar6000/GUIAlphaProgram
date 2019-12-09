@@ -7,7 +7,7 @@ in a production log book. Management would like the production tracking to be mo
 as much time recording what was produced, the log will be more accurate, and it will be easier to generate production reports. 
 
 ## JavaDocs Link: 
-(file:///C:/Users/jacisar/IdeaProjects/GUIAlphaProgram/docs/index.html)
+[JavaDocs](https://github.com/jacisar6000/GUIBetaProgram/blob/master/docs/index.html)
 
 ## Software Used:
 IntelliJ IDE, SceneBuilder, H2 Database
