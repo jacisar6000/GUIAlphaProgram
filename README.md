@@ -9,8 +9,11 @@ as much time recording what was produced, the log will be more accurate, and it 
 ## JavaDocs Link: 
 [JavaDocs](https://github.com/jacisar6000/GUIBetaProgram/blob/master/docs/index.html)
 
-## GIF Demonstration
+## GIF Demonstration:
 ![](https://media.giphy.com/media/UShqYLej674bxsfJdd/giphy.gif)
+
+## Class Diagram:
+![](https://github.com/jacisar6000/GUIFinalRelease/blob/master/src/sample/image/ClassDiagrams.png)
 
 ## Software Used:
 IntelliJ IDE, SceneBuilder, H2 Database
