@@ -3,7 +3,6 @@
 GUIRelease Joseph Cisar - Software Engineering Major and Computer Information Systems Minor student at Florida Gulf Coast University, 12/7/2019
 
 ## JavaDocs Link: 
-[JavaDocs direct link](file:///C:/Users/jacisar/IdeaProjects/GUIAlphaProgram/docs/index.html)
 [JavaDocs through IntelliJ](https://github.com/jacisar6000/GUIBetaProgram/blob/master/docs/index.html)
 
 ## GIF Demonstration:
