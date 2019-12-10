@@ -1,9 +1,10 @@
-package sample;
-
 /**
+ * @author Joseph Cisar
  * Joseph Cisar, 11/8/2019, This file allows the application to show the user what the type of audio
  * players are capable of extending product will implement the MultimediaControl class.
  */
+package sample;
+
 public class AudioPlayer extends Product implements MultimediaControl {
 
   private String audioSpecification;
@@ -13,10 +14,10 @@ public class AudioPlayer extends Product implements MultimediaControl {
    * Each one of these parameters is pass through the method to show the name, manufacturer,
    * mediaType, and specification.
    *
-   * @param name
-   * @param manufacturer
-   * @param audioSpecification
-   * @param mediaType
+   * @param name This is the product's name.
+   * @param manufacturer This is the manufacturer that produced the product.
+   * @param audioSpecification Supported audio formats for the product.
+   * @param mediaType This is the media type of the product.
    */
   public AudioPlayer(String name, String manufacturer, String audioSpecification,
       String mediaType) {

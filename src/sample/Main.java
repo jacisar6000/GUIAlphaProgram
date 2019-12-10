@@ -1,16 +1,17 @@
-package sample;
-
 /**
+ * @author Joseph Cisar
  * Joseph Cisar, 11/8/2019, This file allows the application to be ran and allows
  * the application scene to be edited.
  */
+
+package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-//joey
+
 public class Main extends Application {
 
   @Override

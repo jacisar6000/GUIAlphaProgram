@@ -1,10 +1,10 @@
-package sample;
-
 /**
+ * @author Joseph Cisar
  * Joseph Cisar, 12/5/2019. The controller contains all of the methods and functions that allow the
  * program to run correctly. It combines each of the files actions and runs them in the program. It
  * integrates the database, fxml, and normal java programming.
  */
+package sample;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -133,7 +133,7 @@ public class Controller {
    * This function pulls the type of product from the database by using SQL statements the strings
    * are the pulled and when selected are added to the database.
    *
-   * @param productLine
+   * @param productLine This is the type of product.
    * @throws SQLException
    */
   private void loadProductList(ObservableList<Product> productLine) {
@@ -162,7 +162,7 @@ public class Controller {
    * This function takes the values entered and sets them up to be displayed in each cell of the
    * column.
    *
-   * @param productLine
+   * @param productLine This is the type of product.
    */
   private void setupProductLine(ObservableList<Product> productLine) {
     productNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -188,7 +188,7 @@ public class Controller {
   /**
    * This functions sets the text into the production log.
    *
-   * @param productionRun
+   * @param productionRun This runs the product in the production log.
    */
   private void showProduction(ArrayList<ProductionRecord> productionRun) {
     productionLog.setText(productionRun.toString());
@@ -316,7 +316,7 @@ public class Controller {
   }
 
   /**
-   * @param event
+   * @param event This event logs in the employee.
    */
   @FXML
   public void buttonEmployeeLogin(ActionEvent event) {

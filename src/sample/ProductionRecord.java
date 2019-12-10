@@ -1,11 +1,11 @@
-package sample;
-
 /**
+ * @author Joseph Cisar
  * Joseph Cisar, 11/8/2019, This file allows the application to take record of each product
  * that is produced, its: serial number, ID, the date it was produced,  and the number of
  * products that have been produced. When used in the GUI the production record should show
  * the information on any of the items entered into the database.
  */
+package sample;
 
 import java.util.Date;
 
@@ -19,8 +19,8 @@ public class ProductionRecord {
   /**
    *   Each one of these parameters is pass through the method to show the product that
    *   was produced and how many times it has been.
-   * @param productProduced
-   * @param itemCount
+   * @param productProduced This is the produced product in the production record.
+   * @param itemCount This counts how many items have been chosen.
    */
   public ProductionRecord(Product productProduced, int itemCount) {
     /**
@@ -40,7 +40,7 @@ public class ProductionRecord {
 
   /**
    * Each one of these parameters is pass through the method to show the ID of the product.
-   * @param productID
+   * @param productID This is the identification of the product.
    */
   public ProductionRecord(int productID) {
     this.productID = productID;
@@ -74,7 +74,7 @@ public class ProductionRecord {
 
   /**
    * Calls for the production number and returns it.
-   * @return
+   * @return // This is the production number return.
    */
   public int getProductionNum() {
     return productionNumber;
@@ -82,7 +82,7 @@ public class ProductionRecord {
 
   /**
    * Updates the product number that is being called upon.
-   * @param productionNumber
+   * @param productionNumber This is the number of the product.
    */
   public void setProductionNum(int productionNumber) {
     this.productionNumber = productionNumber;
@@ -98,7 +98,7 @@ public class ProductionRecord {
 
   /**
    * Updates the product ID that is being called upon.
-   * @param productID
+   * @param productID This is the identification of the product.
    */
   public void setProductID(int productID) {
     this.productID = productID;
@@ -114,7 +114,7 @@ public class ProductionRecord {
 
   /**
    * Updates the serial number that is being called upon.
-   * @param serialNumber
+   * @param serialNumber This is the serial number of the product.
    */
   public void setSerialNum(String serialNumber) {
     this.serialNumber = serialNumber;

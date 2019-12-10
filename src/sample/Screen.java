@@ -1,9 +1,10 @@
-package sample;
-
 /**
+ * @author Joseph Cisar
  * Joseph Cisar, 11/8/2019, This file allows the application to show the user specifications
  * of the screen by implementing screen specifications.
  */
+package sample;
+
 public class Screen implements ScreenSpec {
 
   private String resolution;
@@ -31,9 +32,9 @@ public class Screen implements ScreenSpec {
   /**
    * Each one of these parameters is pass through the method to show the resolution,
    * refresh rate, and response time of the screen.
-   * @param resolution
-   * @param refreshRate
-   * @param responseTime
+   * @param resolution This is the resolution of the screen.
+   * @param refreshRate This is the refresh rate of the monitor.
+   * @param responseTime This is the response time of the monitor.
    */
   public Screen(String resolution, int refreshRate, int responseTime) {
 

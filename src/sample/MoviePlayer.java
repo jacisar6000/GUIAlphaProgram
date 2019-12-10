@@ -1,11 +1,12 @@
-package sample;
-
 /**
+ * @author Joseph Cisar
  * Joseph Cisar, 11/8/2019, This file allows the application to show different types of
  * monitors, extend and implement other classes, show the user interactive options while
  * viewing movies. Extending product will allow the implementation of MultimediaControl
  * to be used by the MoviePlayer.
  */
+package sample;
+
 public class MoviePlayer extends Product implements MultimediaControl {
 
   Screen screen;
@@ -16,10 +17,10 @@ public class MoviePlayer extends Product implements MultimediaControl {
    *   the name, manufacturer, screen, and monitorType.
    *   Using ItemType.Visual, it allowed me to bypass errors of conflicting ItemType with
    *   Strings.
-   * @param name
-   * @param manufacturer
-   * @param screen
-   * @param monitorType
+   * @param name This is the name of the product.
+   * @param manufacturer This is the name of the manufacturer.
+   * @param screen This is the type of screen.
+   * @param monitorType This is the type of monitor.
    */
   public MoviePlayer(String name, String manufacturer, Screen screen, MonitorType monitorType) {
 
@@ -36,7 +37,6 @@ public class MoviePlayer extends Product implements MultimediaControl {
 
   // Each of these print statements below will print the text shown onto to screen
   // for the user to see.
-
   public void play() {
     System.out.println("Playing movie");
   }

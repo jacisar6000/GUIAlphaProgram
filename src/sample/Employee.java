@@ -1,9 +1,9 @@
-package sample;
-
 /**
+ * @author Joseph Cisar
  * This class is set to create a new employee account and gives the employee a default
  * email and username when the employees name is entered.
  */
+package sample;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,8 +18,8 @@ public class Employee {
   /**
    * This class sets the usernames and emails to be created when the new
    * employees name and password is entered.
-   * @param name
-   * @param password
+   * @param name This should include the employees first/last name.
+   * @param password This is the employees password.
    */
     public Employee(String name, String password){
 
@@ -49,7 +49,7 @@ public class Employee {
    * This method checks for the name entered to set the username.
    * It grabs the name and sets it after the decimal that is needed to add into
    * the email.
-   * @param name
+   * @param name This should include the employees username.
    */
   private void setUsername (String name) {
     Pattern nameAfterSpace = Pattern.compile("\\s(.*)", Pattern.MULTILINE);
@@ -72,7 +72,7 @@ public class Employee {
    * This method checks for the name entered to set the email.
    * It grabs the name and sets it after the decimal that is needed to add into
    * the email.
-   * @param name
+   * @param name The employees name should be included in the email.
    */
   private void setEmail(String name) {
     Pattern nameBeforeSpace = Pattern.compile("(.*)\\s", Pattern.MULTILINE);
