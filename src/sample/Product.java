@@ -21,8 +21,9 @@ public class Product implements Item {
   public String name;
 
   /**
-   * Each one of these parameters is pass through the method to show the name, manufacturer,
-   * and type.
+   * Each one of these parameters is pass through the method to show the name, manufacturer, and
+   * type.
+   *
    * @param name
    * @param manufacturer
    * @param type
@@ -53,7 +54,6 @@ public class Product implements Item {
     this.manufacturer = manufacturer;
   }
 
-
   //  Updates and retrieves the name chosen.
   //  @return
 
@@ -73,9 +73,4 @@ public class Product implements Item {
         + manufacturer + '\'' + ", Name = '" + name + '\'';
   }
 
-  public void setScene(Scene scene) {
-  }
-
-  public void show() {
-  }
 }

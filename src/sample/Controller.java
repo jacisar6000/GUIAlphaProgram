@@ -112,17 +112,17 @@ public class Controller {
   private TextArea txtEmpInfo;
 
   // A local observable array list drops down when the type of product is is clicked.
-  private ObservableList<Product> productLine = FXCollections.observableArrayList();
+  final ObservableList<Product> productLine = FXCollections.observableArrayList();
 
   // A local observable array list drops down when the number of products has been clicked.
-  private ObservableList<String> choiceList = FXCollections.observableArrayList();
+  final ObservableList<String> choiceList = FXCollections.observableArrayList();
 
   // When the record button is clicked, the amount of products produced is assigned to the
   // production log once.
   final ArrayList<ProductionRecord> productionRun = new ArrayList<>();
 
-   // These are both local variables conn creates the connection to the database and stmt allows for
-   // SQL statements to be created.
+  // These are both local variables conn creates the connection to the database and stmt allows for
+  // SQL statements to be created.
   private Connection conn;
   private Statement stmt;
 
@@ -136,7 +136,7 @@ public class Controller {
    * @param productLine
    * @throws SQLException
    */
-  private void loadProductList(ObservableList<Product> productLine){
+  private void loadProductList(ObservableList<Product> productLine) {
     try {
       String sql = "SELECT * FROM PRODUCT";
       stmt = conn.createStatement();
@@ -201,7 +201,7 @@ public class Controller {
    * @param productionRun
    * @throws SQLException
    */
-  private void loadProductionLog(ArrayList<ProductionRecord> productionRun){
+  private void loadProductionLog(ArrayList<ProductionRecord> productionRun) {
     try {
       String sql = "SELECT * FROM PRODUCTIONRECORD";
       stmt = conn.createStatement();
@@ -223,15 +223,15 @@ public class Controller {
     }
   }
 
-  private void loadEmployee(){
-    try{
-    String name = txtName.getText();
+  private void loadEmployee() {
+    try {
+      String name = txtName.getText();
 
-    String password = txtPassword.getText();
+      String password = txtPassword.getText();
 
-    Employee info = new Employee(name, password);
+      Employee info = new Employee(name, password);
 
-    txtEmpInfo.setText(String.valueOf(info));
+      txtEmpInfo.setText(String.valueOf(info));
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -248,8 +248,7 @@ public class Controller {
       String serialNum = pr.getSerialNum();
       Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-
-       // This string enters the productID, serial number, and date into a query in the database.
+      // This string enters the productID, serial number, and date into a query in the database.
       String sql = "INSERT INTO PRODUCTIONRECORD(PRODUCT_ID, SERIAL_NUM, DATE_PRODUCED) VALUES (?,?,?)";
       pstmt = conn.prepareStatement(sql);
 
@@ -260,7 +259,7 @@ public class Controller {
 
       pstmt.executeUpdate();
 
-       // This displays the prepared statement to the production log.
+      // This displays the prepared statement to the production log.
       showProduction(productionRun);
     }
   }
@@ -269,7 +268,7 @@ public class Controller {
    * When the add product button is clicked, the action adds the information to the database.
    */
   @FXML
-  private void buttonAddProduct(ActionEvent event){
+  private void buttonAddProduct(ActionEvent event) {
     try {
       // Allows the text from the product name to be added to the.
       String name = productName.getText();
@@ -317,22 +316,20 @@ public class Controller {
   }
 
   /**
-   *
-   *
    * @param event
    */
   @FXML
-  public void buttonEmployeeLogin(ActionEvent event){
-      loadEmployee();
+  public void buttonEmployeeLogin(ActionEvent event) {
+    loadEmployee();
   }
 
   /**
-   * This function allows the product quantity and string chosen to be added
-   * into the production log when record button is clicked.
+   * This function allows the product quantity and string chosen to be added into the production log
+   * when record button is clicked.
    */
   @FXML
   void buttonRecordProduction(ActionEvent event) throws SQLException {
-     // Selects the item in the list vew text area.
+    // Selects the item in the list vew text area.
     try {
       Product record = lvProduct.getSelectionModel().getSelectedItem();
 
@@ -352,13 +349,13 @@ public class Controller {
         // Adds the production record in the product log.
         addToProductionLog(productionRun);
 
-         // Shows the production record.
+        // Shows the production record.
         showProduction(productionRun);
 
         // Loads the production record into the production log.
         loadProductionLog(productionRun);
       }
-    } catch(Exception e){
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
@@ -369,7 +366,7 @@ public class Controller {
    */
   public void initialize() {
 
-     // Initializes the database.
+    // Initializes the database.
     initializeDB();
 
     for (ItemType it : ItemType.values()) {
@@ -382,7 +379,7 @@ public class Controller {
     ObservableList<Integer> list = FXCollections
         .observableArrayList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-     // Sets a quantity for the amount of items.
+    // Sets a quantity for the amount of items.
     chooseQuantity.setItems(list);
 
     // Selects the amount of products ordered of the certain product.
@@ -402,7 +399,7 @@ public class Controller {
     final String JDBC_DRIVER = "org.h2.Driver";
 
     //  Unable to run the program without this code, I acknowledge it is a bug.
-    final String db_url = "jdbc:h2:./res/ProductDb";
+    final String db_url = "jdbc:h2:./res/ProductLineDB";
 
     // Unable to run the program without this code, I acknowledge it is a bug.
     final String user = "";
@@ -422,5 +419,3 @@ public class Controller {
     }
   }
 }
-
-
